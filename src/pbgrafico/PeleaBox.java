@@ -1,5 +1,26 @@
 package pbgrafico;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Random;
+
+class TextAreaPrintStream extends PrintStream {
+    private javax.swing.JTextArea textArea;
+
+    public TextAreaPrintStream(OutputStream out, javax.swing.JTextArea textArea) {
+        super(out);
+        this.textArea = textArea;
+    }
+
+    @Override
+    public void println(String x) {
+        //Agrega el texto al textArea
+        textArea.append(x + "\n");
+        // Desplaza el JScrollPane hasta el fondo
+        textArea.setCaretPosition(textArea.getDocument().getLength());
+    }
+}
 
 class Pelea{ //La clase pelea que hace que los golpes se cuenten
     //Atributo
@@ -104,6 +125,9 @@ public class PeleaBox extends javax.swing.JFrame {
         boxeador1.RecibeJLabel1(jLabel1);
         boxeador2.RecibeJLabel2(jLabel2);
          */
+        TextAreaPrintStream printStream = new TextAreaPrintStream(System.out, txtMensajes);
+        System.setOut(printStream);
+        System.setErr(printStream);
         
     }
     /**
@@ -134,6 +158,8 @@ public class PeleaBox extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtMensajes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Street Fighter Hilos");
@@ -198,6 +224,7 @@ public class PeleaBox extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                txtMensajes.setText("");
             }
         });
         jPanel1.add(jButton1);
@@ -235,6 +262,17 @@ public class PeleaBox extends javax.swing.JFrame {
         jLabel12.setText("COMBO:");
         jPanel1.add(jLabel12);
         jLabel12.setBounds(50, 60, 60, 15);
+
+        txtMensajes.setBackground(new java.awt.Color(37, 37, 38));
+        txtMensajes.setColumns(20);
+        txtMensajes.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
+        txtMensajes.setForeground(java.awt.Color.white);
+        txtMensajes.setRows(5);
+        txtMensajes.setName("txtAreaConsola"); // NOI18N
+        jScrollPane1.setViewportView(txtMensajes);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 280, 620, 200);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,5 +354,7 @@ public class PeleaBox extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtMensajes;
     // End of variables declaration//GEN-END:variables
 }
