@@ -1,4 +1,4 @@
-package pbgrafico3;
+package pbgrafico;
 import java.util.Random;
 
 class Pelea{ //La clase pelea que hace que los golpes se cuenten
@@ -139,58 +139,58 @@ public class PeleaBox extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/kenGolpe.gif"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/kenGolpe.gif"))); // NOI18N
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(270, 90, 150, 110);
+        jLabel16.setBounds(240, 90, 150, 110);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/ryuGolpe.gif"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/ryuGolpe.gif"))); // NOI18N
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(240, 80, 100, 130);
+        jLabel14.setBounds(210, 80, 100, 130);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/kenIdle.gif"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/kenIdle.gif"))); // NOI18N
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(340, 90, 70, 110);
+        jLabel15.setBounds(310, 90, 70, 110);
 
         jLabel8.setBackground(new java.awt.Color(255, 153, 102));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/ryuIdle.gif"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/ryuIdle.gif"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(240, 90, 100, 111);
+        jLabel8.setBounds(210, 90, 100, 111);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 51, 255));
         jLabel13.setText(":COMBO");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(550, 60, 60, 20);
+        jLabel13.setBounds(520, 60, 60, 20);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 255));
         jLabel11.setText("COMBO:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(80, 60, 60, 15);
+        jLabel11.setBounds(50, 60, 60, 15);
 
         jLabel10.setBackground(java.awt.Color.cyan);
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 255));
         jLabel10.setText("KEN");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(570, 40, 40, 20);
+        jLabel10.setBounds(540, 40, 40, 20);
 
         jLabel7.setBackground(java.awt.Color.cyan);
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 255));
         jLabel7.setText("RYU");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(80, 40, 30, 20);
+        jLabel7.setBounds(50, 40, 30, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/bbRyu.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/bbRyu.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 40, 21, 22);
+        jLabel5.setBounds(20, 40, 21, 22);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/bbKen.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/bbKen.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(610, 40, 20, 22);
+        jLabel6.setBounds(580, 40, 20, 22);
 
         jButton1.setText("Iniciar Pelea");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -199,53 +199,50 @@ public class PeleaBox extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(280, 230, 120, 25);
+        jButton1.setBounds(250, 230, 120, 23);
 
         jLabel1.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
         jLabel1.setText("0");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(130, 50, 70, 35);
+        jLabel1.setBounds(100, 50, 70, 35);
 
         jLabel2.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
         jLabel2.setText("0");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(510, 50, 80, 40);
+        jLabel2.setBounds(480, 50, 80, 40);
 
         jLabel3.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
         jLabel3.setText("      F I G H T");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(250, 0, 190, 30);
+        jLabel3.setBounds(220, 0, 190, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico3/stage.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/stage.gif"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(30, 0, 620, 224);
+        jLabel4.setBounds(0, 0, 620, 224);
 
         jLabel9.setBackground(java.awt.Color.cyan);
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 255));
         jLabel9.setText("RYU");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(80, 10, 130, 60);
+        jLabel9.setBounds(50, 10, 130, 60);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 255));
         jLabel12.setText("COMBO:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(80, 60, 60, 15);
+        jLabel12.setBounds(50, 60, 60, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 847, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
