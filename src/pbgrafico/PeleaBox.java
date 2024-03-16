@@ -136,23 +136,25 @@ public class PeleaBox extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Street Fighter Hilos");
+        setResizable(false);
 
         jPanel1.setLayout(null);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/kenGolpe.gif"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenGolpe.gif"))); // NOI18N
         jPanel1.add(jLabel16);
         jLabel16.setBounds(240, 90, 150, 110);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/ryuGolpe.gif"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuGolpe.gif"))); // NOI18N
         jPanel1.add(jLabel14);
         jLabel14.setBounds(210, 80, 100, 130);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/kenIdle.gif"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenIdle.gif"))); // NOI18N
         jPanel1.add(jLabel15);
         jLabel15.setBounds(310, 90, 70, 110);
 
         jLabel8.setBackground(new java.awt.Color(255, 153, 102));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/ryuIdle.gif"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuIdle.gif"))); // NOI18N
         jPanel1.add(jLabel8);
         jLabel8.setBounds(210, 90, 100, 111);
 
@@ -182,12 +184,12 @@ public class PeleaBox extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(50, 40, 30, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/bbRyu.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbRyu.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 40, 21, 22);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/bbKen.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbKen.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(580, 40, 20, 22);
@@ -216,7 +218,7 @@ public class PeleaBox extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(220, 0, 190, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/stage.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/stage.gif"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(0, 0, 620, 224);
