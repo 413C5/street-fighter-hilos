@@ -117,8 +117,8 @@ public class PeleaBox extends javax.swing.JFrame {
     public PeleaBox() {
         initComponents();
         setLocationRelativeTo(null);
-        boxeador1= new Boxeador("Ryu",pelea,jLabel1,jLabel3,jLabel8,jLabel14); //asignacion de valores al boxeador
-         boxeador2= new Boxeador("Ken",pelea,jLabel2,jLabel3,jLabel15,jLabel16);
+        boxeador1= new Boxeador("Ryu",pelea,lblContador1,lblAnuncio,lblRyuIdle,lblRyuGolpe); //asignacion de valores al boxeador
+         boxeador2= new Boxeador("Ken",pelea,lblContador2,lblAnuncio,lblKenIdle,lblKenGolpe);
         boxeador1.AnimacionParado(); //Hice que las animaciones de golpe sean falsas al inicio para que no aparezcan sobrepuestas
         boxeador2.AnimacionParado(); // pone la animacion de de parado en el boxeador
          /*
@@ -141,23 +141,21 @@ public class PeleaBox extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblKenGolpe = new javax.swing.JLabel();
+        lblRyuGolpe = new javax.swing.JLabel();
+        lblKenIdle = new javax.swing.JLabel();
+        lblRyuIdle = new javax.swing.JLabel();
+        lblCombo2 = new javax.swing.JLabel();
+        lblCombo1 = new javax.swing.JLabel();
+        lblNombrePeleador2 = new javax.swing.JLabel();
+        lblNombrePeleador1 = new javax.swing.JLabel();
+        lblMiniatura1 = new javax.swing.JLabel();
+        lblMiniatura2 = new javax.swing.JLabel();
+        btnIniciar = new javax.swing.JButton();
+        lblContador1 = new javax.swing.JLabel();
+        lblContador2 = new javax.swing.JLabel();
+        lblAnuncio = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMensajes = new javax.swing.JTextArea();
 
@@ -167,101 +165,87 @@ public class PeleaBox extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenGolpe.gif"))); // NOI18N
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(240, 90, 150, 110);
+        lblKenGolpe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenGolpe.gif"))); // NOI18N
+        jPanel1.add(lblKenGolpe);
+        lblKenGolpe.setBounds(240, 90, 150, 110);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuGolpe.gif"))); // NOI18N
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(210, 80, 100, 130);
+        lblRyuGolpe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuGolpe.gif"))); // NOI18N
+        jPanel1.add(lblRyuGolpe);
+        lblRyuGolpe.setBounds(210, 80, 100, 130);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenIdle.gif"))); // NOI18N
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(310, 90, 70, 110);
+        lblKenIdle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/kenIdle.gif"))); // NOI18N
+        jPanel1.add(lblKenIdle);
+        lblKenIdle.setBounds(310, 90, 70, 110);
 
-        jLabel8.setBackground(new java.awt.Color(255, 153, 102));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuIdle.gif"))); // NOI18N
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(210, 90, 100, 111);
+        lblRyuIdle.setBackground(new java.awt.Color(255, 153, 102));
+        lblRyuIdle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/ryuIdle.gif"))); // NOI18N
+        jPanel1.add(lblRyuIdle);
+        lblRyuIdle.setBounds(210, 90, 100, 111);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel13.setText(":COMBO");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(520, 60, 60, 20);
+        lblCombo2.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
+        lblCombo2.setForeground(new java.awt.Color(51, 51, 255));
+        lblCombo2.setText(":COMBO");
+        jPanel1.add(lblCombo2);
+        lblCombo2.setBounds(520, 60, 60, 20);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel11.setText("COMBO:");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(50, 60, 60, 15);
+        lblCombo1.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
+        lblCombo1.setForeground(new java.awt.Color(51, 51, 255));
+        lblCombo1.setText("COMBO:");
+        jPanel1.add(lblCombo1);
+        lblCombo1.setBounds(50, 60, 60, 15);
 
-        jLabel10.setBackground(java.awt.Color.cyan);
-        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel10.setText("KEN");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(540, 40, 40, 20);
+        lblNombrePeleador2.setBackground(java.awt.Color.cyan);
+        lblNombrePeleador2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblNombrePeleador2.setForeground(new java.awt.Color(0, 0, 255));
+        lblNombrePeleador2.setText("KEN");
+        jPanel1.add(lblNombrePeleador2);
+        lblNombrePeleador2.setBounds(540, 40, 40, 20);
 
-        jLabel7.setBackground(java.awt.Color.cyan);
-        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel7.setText("RYU");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(50, 40, 30, 20);
+        lblNombrePeleador1.setBackground(java.awt.Color.cyan);
+        lblNombrePeleador1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblNombrePeleador1.setForeground(new java.awt.Color(0, 0, 255));
+        lblNombrePeleador1.setText("RYU");
+        jPanel1.add(lblNombrePeleador1);
+        lblNombrePeleador1.setBounds(50, 40, 30, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbRyu.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 40, 21, 22);
+        lblMiniatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbRyu.jpg"))); // NOI18N
+        lblMiniatura1.setText("jLabel5");
+        jPanel1.add(lblMiniatura1);
+        lblMiniatura1.setBounds(20, 40, 21, 22);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbKen.jpg"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(580, 40, 20, 22);
+        lblMiniatura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/bbKen.jpg"))); // NOI18N
+        lblMiniatura2.setText("jLabel6");
+        jPanel1.add(lblMiniatura2);
+        lblMiniatura2.setBounds(580, 40, 20, 22);
 
-        jButton1.setText("Iniciar Pelea");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciar.setText("Iniciar Pelea");
+        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-                txtMensajes.setText("");
+                btnIniciarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(250, 230, 120, 23);
+        jPanel1.add(btnIniciar);
+        btnIniciar.setBounds(250, 230, 120, 23);
 
-        jLabel1.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
-        jLabel1.setText("0");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(100, 50, 70, 35);
+        lblContador1.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
+        lblContador1.setText("0");
+        jPanel1.add(lblContador1);
+        lblContador1.setBounds(100, 50, 70, 35);
 
-        jLabel2.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
-        jLabel2.setText("0");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(480, 50, 80, 40);
+        lblContador2.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
+        lblContador2.setText("0");
+        jPanel1.add(lblContador2);
+        lblContador2.setBounds(480, 50, 80, 40);
 
-        jLabel3.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
-        jLabel3.setText("      F I G H T");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(220, 0, 190, 30);
+        lblAnuncio.setFont(new java.awt.Font("FZYaoTi", 3, 24)); // NOI18N
+        lblAnuncio.setText("      F I G H T");
+        jPanel1.add(lblAnuncio);
+        lblAnuncio.setBounds(220, 0, 190, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/stage.gif"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 0, 620, 224);
-
-        jLabel9.setBackground(java.awt.Color.cyan);
-        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel9.setText("RYU");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(50, 10, 130, 60);
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 2, 11)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel12.setText("COMBO:");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(50, 60, 60, 15);
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pbgrafico/resources/stage.gif"))); // NOI18N
+        lblFondo.setText("jLabel4");
+        jPanel1.add(lblFondo);
+        lblFondo.setBounds(0, 0, 620, 224);
 
         txtMensajes.setBackground(new java.awt.Color(37, 37, 38));
         txtMensajes.setColumns(20);
@@ -290,18 +274,18 @@ public class PeleaBox extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        boxeador1= new Boxeador("Ryu",pelea,jLabel1,jLabel3,jLabel8,jLabel14); //creacion de objetos boxeador para que al presionar start no se
-        boxeador2= new Boxeador("Ken",pelea,jLabel2,jLabel3,jLabel15,jLabel16);//rompa el programa
+    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+        boxeador1= new Boxeador("Ryu",pelea,lblContador1,lblAnuncio,lblRyuIdle,lblRyuGolpe); //creacion de objetos boxeador para que al presionar start no se
+        boxeador2= new Boxeador("Ken",pelea,lblContador2,lblAnuncio,lblKenIdle,lblKenGolpe);//rompa el programa
         pelea.reset(); //Se resetea el contador en pelea para que inicie bien el contador si se quiere repetir el programa
-        jLabel3.setText("Fight");
+        lblAnuncio.setText("Fight");
         boxeador1.start(); //inicia el hilo de boxeador
         boxeador2.start();
         boxeador1.AnimacionGolpe(); //Se hace el cambio de animaciones de parado a golpes
         boxeador2.AnimacionGolpe(); // realiza la animacion de golpe
 
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnIniciarActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -336,25 +320,23 @@ public class PeleaBox extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton btnIniciar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAnuncio;
+    private javax.swing.JLabel lblCombo1;
+    private javax.swing.JLabel lblCombo2;
+    private javax.swing.JLabel lblContador1;
+    private javax.swing.JLabel lblContador2;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblKenGolpe;
+    private javax.swing.JLabel lblKenIdle;
+    private javax.swing.JLabel lblMiniatura1;
+    private javax.swing.JLabel lblMiniatura2;
+    private javax.swing.JLabel lblNombrePeleador1;
+    private javax.swing.JLabel lblNombrePeleador2;
+    private javax.swing.JLabel lblRyuGolpe;
+    private javax.swing.JLabel lblRyuIdle;
     private javax.swing.JTextArea txtMensajes;
     // End of variables declaration//GEN-END:variables
 }
