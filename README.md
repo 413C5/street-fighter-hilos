@@ -7,6 +7,6 @@ To start the simulation, simply click the "Iniciar Pelea" button.
 # How to Run this App
 You can compile this project using the latest version of Netbeans, or alternatively, download the file from releases.
 
-# About this project
+# About this Project
 
 This project was made in Java in order to demonstrate the use of threads using JDK 8u391.
