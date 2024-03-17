@@ -1,9 +1,18 @@
 package pbgrafico;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.sound.sampled.LineUnavailableException;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 class TextAreaPrintStream extends PrintStream {
     private javax.swing.JTextArea textArea;
@@ -114,22 +123,27 @@ public class PeleaBox extends javax.swing.JFrame {
     Pelea pelea=new Pelea();
     Boxeador boxeador1, boxeador2;
 
-    public PeleaBox() {
+    public PeleaBox() throws LineUnavailableException, IOException {
+        ImageIcon icon;
         initComponents();
         setLocationRelativeTo(null);
-        boxeador1= new Boxeador("Ryu",pelea,lblContador1,lblAnuncio,lblRyuIdle,lblRyuGolpe); //asignacion de valores al boxeador
-         boxeador2= new Boxeador("Ken",pelea,lblContador2,lblAnuncio,lblKenIdle,lblKenGolpe);
+        boxeador1 = new Boxeador("Ryu", pelea, lblContador1, lblAnuncio, lblRyuIdle, lblRyuGolpe); //asignacion de valores al boxeador
+        boxeador2 = new Boxeador("Ken", pelea, lblContador2, lblAnuncio, lblKenIdle, lblKenGolpe);
         boxeador1.AnimacionParado(); //Hice que las animaciones de golpe sean falsas al inicio para que no aparezcan sobrepuestas
         boxeador2.AnimacionParado(); // pone la animacion de de parado en el boxeador
-         /*
+        InputStream inputStream = getClass().getResourceAsStream("/pbgrafico/resources/sfLogo.png");
+        icon = new ImageIcon(ImageIO.read(inputStream));
+        setIconImage(icon.getImage());
+        /*
         boxeador1.RecibeJLabel1(jLabel1);
         boxeador2.RecibeJLabel2(jLabel2);
          */
+
         TextAreaPrintStream printStream = new TextAreaPrintStream(System.out, txtMensajes);
         System.setOut(printStream);
         System.setErr(printStream);
-        
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -283,6 +297,8 @@ public class PeleaBox extends javax.swing.JFrame {
         boxeador2.start();
         boxeador1.AnimacionGolpe(); //Se hace el cambio de animaciones de parado a golpes
         boxeador2.AnimacionGolpe(); // realiza la animacion de golpe
+        txtMensajes.setText(""); 
+        
 
         
     }//GEN-LAST:event_btnIniciarActionPerformed
@@ -310,8 +326,24 @@ public class PeleaBox extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PeleaBox().setVisible(true);
-                
+                try {
+                    //Cambiar a estilo Windows
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    new PeleaBox().setVisible(true);
+                } catch (LineUnavailableException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(PeleaBox.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         });
         
